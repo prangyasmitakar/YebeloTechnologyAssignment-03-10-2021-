@@ -1,0 +1,74 @@
+
+<div class="row " >
+  <div  style="padding: 0% 10% 1% 5%;">
+  
+  <label>Select Category</label> &nbsp;
+    <select [formControl]="myControl">
+      <option [ngValue]="'All'">All</option>
+      <option [ngValue]="cat" *ngFor="let cat of categoriesList" >{{cat}}</option>
+    </select>
+    <button class="btn btn-primary" (click)="savedata()" style="float: right;">Save Data</button>
+        </div>
+        <div class="card col-md-3"  *ngFor="let data1 of jsonData">
+          <img class="card-img-top img-size" src="../assets/stock.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Product Details</h5>
+            <div class="card-text">
+              <div>
+  
+                <div>
+                  <b>ID :</b>{{data1.p_id}}
+                </div>
+                  <div>
+                   <b>Product-name :</b> {{data1.p_name}}
+                  </div>
+                 
+                  <div>
+                    <b>Price :</b>{{data1.p_cost}}
+                  </div>
+                  <div>
+                    <b>Availability :</b>{{data1.p_availability}}
+                  </div>
+                  <div>
+                    <b>Description :</b>{{data1.p_details}}
+                  </div>
+                  <div>
+                  <b>Category :</b>{{data1.p_category}}
+                </div>
+            
+              </div>
+            </div>
+            <div>
+            <label>Select Quanity : </label> &nbsp;
+            <input type="number" [(ngModel)]="data1.quantity">
+          </div>
+          </div>
+        </div>
+  <!-- <div class="col-md-2 card" *ngFor="let data1 of jsonData">
+    
+ <div>
+  
+    <div>
+      <b>ID :</b>{{data1.p_id}}
+    </div>
+      <div>
+       <b>Product-name :</b> {{data1.p_name}}
+      </div>
+     
+      <div>
+        <b>Price :</b>{{data1.p_cost}}
+      </div>
+      <div>
+        <b>Availability :</b>{{data1.p_availability}}
+      </div>
+      <div>
+        <b>Description :</b>{{data1.p_details}}
+      </div>
+      <div>
+      <b>Category :</b>{{data1.p_category}}
+    </div>
+
+  </div>
+  </div> -->
+  
+</div>
